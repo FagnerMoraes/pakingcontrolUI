@@ -1,4 +1,6 @@
+import { ParkingSpotService } from './services/parking-spot.service';
 import { Component } from '@angular/core';
+import { ParkingSpotResponse } from './models/parking-spot-response';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pakingcontrolUI';
+  title = 'parkingControlUi';
+  displayedColumns: string[] = ['licensePlate',
+                                'carEntryTime',
+                                'carLeaveTime',
+                                'parkingSpotStatus',
+                                'priceOfParking',
+                                'timeOfParking'];
+
+  parkingSpots: ParkingSpotResponse[] = [];
+
+
+  constructor(private parkingSpotService: ParkingSpotService){  }
+
+  ngOnInit() : void {
+    this.parkingSpotService
+    .getParkingSpots()
+    .subscribe((result : ParkingSpotResponse[]) => (this.parkingSpots = result));
+  }
 }
