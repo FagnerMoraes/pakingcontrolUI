@@ -1,18 +1,28 @@
-<mat-toolbar>
-  <span>My Application</span>
+<mat-toolbar  color="primary">
+  <span>Vagas de Estacionamento</span>
 </mat-toolbar>
 
-<table mat-table [dataSource]="parkingSpots" class="mat-elevation-z8">
+<table color="primary" mat-table [dataSource]="parkingSpots" class="mat-elevation-z8">
   <ng-container matColumnDef="licensePlate">
     <th mat-header-cell *matHeaderCellDef> Placa do Veiculo </th>
     <td mat-cell *matCellDef="let parkingsSpot"> {{parkingsSpot.licensePlate}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="carEntryDate">
+    <th mat-header-cell *matHeaderCellDef> Data da Entrada </th>
+    <td mat-cell *matCellDef="let parkingsSpot"> {{parkingsSpot.carEntryDate}} </td>
+  </ng-container>
+  
   <ng-container matColumnDef="carEntryTime">
     <th mat-header-cell *matHeaderCellDef> Hora da Entrada </th>
     <td mat-cell *matCellDef="let parkingsSpot"> {{parkingsSpot.carEntryTime}} </td>
   </ng-container>
 
+  <ng-container matColumnDef="carLeaveDate">
+    <th mat-header-cell *matHeaderCellDef> Data da Saída </th>
+    <td mat-cell *matCellDef="let parkingsSpot"> {{parkingsSpot.carLeaveDate}} </td>
+  </ng-container>
+  
   <ng-container matColumnDef="carLeaveTime">
     <th mat-header-cell *matHeaderCellDef> Hora da Saída </th>
     <td mat-cell *matCellDef="let parkingsSpot"> {{parkingsSpot.carLeaveTime}} </td>

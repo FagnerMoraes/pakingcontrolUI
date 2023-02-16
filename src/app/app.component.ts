@@ -10,7 +10,9 @@ import { ParkingSpotResponse } from './models/parking-spot-response';
 export class AppComponent {
   title = 'parkingControlUi';
   displayedColumns: string[] = ['licensePlate',
+                                'carEntryDate',
                                 'carEntryTime',
+                                'carLeaveDate',
                                 'carLeaveTime',
                                 'parkingSpotStatus',
                                 'priceOfParking',
